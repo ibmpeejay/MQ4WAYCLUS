@@ -2,7 +2,7 @@
 
 @Library('MicroserviceBuilder') _
 microserviceBuilderPipeline {
-  image = 'mq904da'
+  image = 'mq904pj'
   mavenImage = 'wwdemo/images:maven-lab'
   chartFolder = 'chart'
   deployBranch = 'master'
