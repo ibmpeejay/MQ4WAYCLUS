@@ -115,8 +115,8 @@ if [ "${MQ_DEV}" == "true" ]; then
 
   # Set authorities to give access to qmgr, queues and topic
   su -l mqm -c "setmqaut -m ${MQ_QMGR_NAME} -t qmgr -g mqclient +connect +inq"
-  su -l mqm -c "setmqaut -m ${MQ_QMGR_NAME} -n \"DEV.**\" -t queue -g mqclient +put +get +browse +inq"
-  su -l mqm -c "setmqaut -m ${MQ_QMGR_NAME} -n \"DEV.**\" -t topic -g mqclient +sub +pub"
+  su -l mqm -c "setmqaut -m ${MQ_QMGR_NAME} -n \"*.**\" -t queue -g mqclient +put +get +browse +inq"
+  su -l mqm -c "setmqaut -m ${MQ_QMGR_NAME} -n \"*.**\" -t topic -g mqclient +sub +pub"
 
   echo "Configuring admin user"
   configure_os_user mqm MQ_ADMIN_NAME MQ_ADMIN_PASSWORD /home/admin
