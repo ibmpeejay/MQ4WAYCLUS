@@ -15,7 +15,7 @@ persistence:
   # enabled is whether to use Persistent Volumes or not
   enabled: true
   # useDynamicProvisioning is whether or not to use Storage Classes to dynamically create Persistent Volumes
-  useDynamicProvisioning: true
+  useDynamicProvisioning: false
 
 # dataPVC section specifies settings for the main Persistent Volume Claim, which is used for data in /var/mqm
 dataPVC:
@@ -23,7 +23,6 @@ dataPVC:
   name: "data"
   ## storageClassName is the name of the Storage Class to use, or an empty string for no Storage Class
   storageClassName: ""
-  storageClaimName: "gw1"
   ## size is the minimum size of the Persistent Volume
   size: 5Gi
 
