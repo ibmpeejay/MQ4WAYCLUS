@@ -13,9 +13,9 @@ image:
 # persistence section specifies persistence settings which apply to the whole chart
 persistence:
   # enabled is whether to use Persistent Volumes or not
-  enabled: false
+  enabled: true
   # useDynamicProvisioning is whether or not to use Storage Classes to dynamically create Persistent Volumes
-  useDynamicProvisioning: true
+  useDynamicProvisioning: false
 
 # dataPVC section specifies settings for the main Persistent Volume Claim, which is used for data in /var/mqm
 dataPVC:
@@ -24,7 +24,7 @@ dataPVC:
   ## storageClassName is the name of the Storage Class to use, or an empty string for no Storage Class
   storageClassName: ""
   ## size is the minimum size of the Persistent Volume
-  size: 2Gi
+  size: 5Gi
 
 service:
   name: mq904pj
