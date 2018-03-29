@@ -23,6 +23,7 @@ dataPVC:
   name: "data"
   ## storageClassName is the name of the Storage Class to use, or an empty string for no Storage Class
   storageClassName: ""
+  storageClaimName: "gw1"
   ## size is the minimum size of the Persistent Volume
   size: 2Gi
 
