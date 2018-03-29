@@ -25,7 +25,7 @@ dataPVC:
   storageClassName: ""
   storageClaimName: "gw1"
   ## size is the minimum size of the Persistent Volume
-  size: 2Gi
+  size: 5Gi
 
 service:
   name: mq904pj
