@@ -27,7 +27,7 @@ dataPVC:
   size: 2Gi
 
 service:
-  name: mq904da
+  name: mq904pj
   type: NodePort
 
 resources:
