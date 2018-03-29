@@ -99,28 +99,7 @@ spec:
 {{ toYaml .Values.resources.limits | indent 14 }}
             requests:
 {{ toYaml .Values.resources.requests | indent 14 }}
-  volumeClaimTemplates:
-  {{- if .Values.persistence.enabled }}
-  - metadata:
-      name: "{{ template "fullname" . }}-{{ .Values.dataPVC.name }}"
-      labels:
-        app: {{ template "fullname" . }}
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: "{{ .Release.Name }}"
-        heritage: "{{ .Release.Service }}"
-    spec:
-      {{- if .Values.persistence.useDynamicProvisioning }}
-      # If present, use the storageClassName from the values.yaml, else use the
-      # default storageClass setup by Kubernetes Administrator
-      #
-      # Setting storageClassName to nil means use the default storage class
-      storageClassName: {{ default nil .Values.dataPVC.storageClassName | quote }}
-      {{- else }}
-      # Disable dynamic provisioning
-      storageClassName: ""
-      {{- end }}
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: {{ .Values.dataPVC.size | quote }}
-  {{- end }}
+  volumes:
+      - name: "{{ template "fullname" . }}-{{ .Values.dataPVC.name }}"
+        persistentVolumeClaim:
+claimName: app1
