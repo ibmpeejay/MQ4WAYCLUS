@@ -20,7 +20,7 @@ persistence:
 # dataPVC section specifies settings for the main Persistent Volume Claim, which is used for data in /var/mqm
 dataPVC:
   # name sets part of the name for this Persistent Volume Claim
-  name: "data"
+  name: "data-app2"
   ## storageClassName is the name of the Storage Class to use, or an empty string for no Storage Class
   storageClassName: ""
   ## size is the minimum size of the Persistent Volume
